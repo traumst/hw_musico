@@ -10,8 +10,8 @@ class Player extends Component {
       src={this.props.src}
       preload="auto"
       volume={this.props.store.volume}
-      onPause={() => this.props.store.play = false}
-      onPlay={() => this.props.store.play = true}
+      onPause={() => this.props.store.playIcon = false}
+      onPlay={() => this.props.store.playIcon = true}
     >
       Your browser does not support HTML5
     </ReactAudioPlayer>

@@ -22,15 +22,7 @@ body {
     margin: 10px 0 10px 30px;
 }
 
-.looper-head .add-track {
-    overflow: hidden;
-}
-
 .add-track {
-    width: 30px;
-}
-
-.styled-select {
     background: url(https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_playlist_add_black_24px.svg) no-repeat 100%;
     color: transparent;
     height: 30px;
@@ -39,9 +31,12 @@ body {
     border: none;
 }
 
-.styled-select * {
-    color: ghostwhite;
-    background-color: grey;
+.add-track * {
+    color: black;
+}
+
+.add-track *:first-child {
+    font-weight: bold;
 }
 
 .sync-all {

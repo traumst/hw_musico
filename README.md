@@ -21,10 +21,18 @@ npm install
 
 ## Deployment
 
-Execute `npm start` inside project folder or run
+Inside project folder, execute 
+ 
+```
+npm start
+``` 
+
+Alternatively, to rebuild `bundle.js` and then launch the server run
+
 ```
 ./node_modules/.bin/webpack -d && ./node_modules/.bin/webpack-dev-server -d
 ```
+
 
 ## License
 Public Domain

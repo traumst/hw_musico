@@ -1,6 +1,4 @@
-// const webpack = require('webpack');
 const path = require('path');
-// const cors = require('cors');
 
 const BUILD_DIR = path.join(__dirname, 'src/client/public');
 const APP_DIR = path.join(__dirname, 'src/client/app');

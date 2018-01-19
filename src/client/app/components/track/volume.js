@@ -21,7 +21,7 @@ class TrackVolume extends Component {
           trackColor="#111111"
           thumbSize={8}
           thumbColor="#111111"
-          onChange={(newVolume) => this.props.store.volume = newVolume.percent }
+          onChange={newVolume => this.props.store.volume = newVolume.percent}
         />
       </div>
     </div>
