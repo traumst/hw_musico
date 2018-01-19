@@ -1,5 +1,5 @@
 body {
-    font: 14px sans-serif Roboto;
+    font: 14px Arial, "Helvetica Neue", Helvetica, sans-serif;
     background-color: ghostwhite;
 }
 
@@ -22,20 +22,24 @@ body {
     margin: 10px 0 10px 30px;
 }
 
-.add-track {
-    background: url(https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_playlist_add_black_24px.svg) no-repeat 100%;
-    color: transparent;
-    height: 30px;
-    width: 30px;
+.add-track-select {
+    /*background: url(https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_playlist_add_black_24px.svg) no-repeat 100%;*/
+    /*color: transparent;*/
+    /*height: 30px;*/
+    /*width: 30px;*/
     overflow: hidden;
     border: none;
+    background-color: ghostwhite;
+    outline: none;
+    font-size: 15px;
+    /*background: no-repeat right 95% url("https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_add_black_24px.svg");*/
 }
 
-.add-track * {
-    color: black;
-}
+/*.add-track * {*/
+    /*color: black;*/
+/*}*/
 
-.add-track *:first-child {
+.add-track-select *:first-child {
     font-weight: bold;
 }
 
@@ -58,13 +62,20 @@ body {
     margin: auto;
 }
 
-.track {
+.track, .add-track {
     padding: 7px 0 0 0;
     height: 50px;
     border-bottom: black solid 1px;
 }
 
-.play-button {
+.add-track-select {
+    float: left;
+    width: 80%;
+    height: 70%;
+    text-align: left;
+}
+
+.play-button, .plus-button {
     float: left;
     width: 15%;
     font-size: 35px;
@@ -102,3 +113,11 @@ body {
     margin: 0 2% 0 10%;
 }
 
+.add-first-track-text {
+    float: left;
+    margin: 10px 0 0 0;
+    height: 100%;
+    width: 80%;
+    text-align: center;
+    vertical-align: center;
+}

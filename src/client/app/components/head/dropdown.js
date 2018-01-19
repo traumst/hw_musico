@@ -15,8 +15,7 @@ class Dropdown extends Component {
   }
   
   render() {
-    
-    return <select className="add-track" onChange={this.handleAdd.bind(this)}>
+    return <select className="add-track-select" onChange={this.handleAdd.bind(this)}>
       <option className="add-track-header" disabled>ADD TRACKS:</option>
       {this.props.store.tracklist.filter(track => !this.props.store.playlist.find(alreadyAdded => alreadyAdded.id === track.id))
       // order list by owner and track title

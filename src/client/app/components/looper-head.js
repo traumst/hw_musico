@@ -1,10 +1,6 @@
 import React, {Component} from "react";
 import {observer} from 'mobx-react';
 
-import Add from 'react-icons/lib/md/add-circle-outline';
-
-import Dropdown from './head/dropdown'
-
 function playAllStopAll(e) {
   e.preventDefault();
   let allTracks = document.querySelectorAll('.playlist > div > audio');
@@ -43,10 +39,6 @@ class LooperHead extends Component {
       <a className="play-all" onClick={playAllStopAll} href="javascript:void(0);">
         PLAY ALL
       </a>
-      <Dropdown
-        store={this.props.store}
-        placeholder={<Add/>}
-      />
     </div>
   }
 }
