@@ -6,8 +6,8 @@ import Player from './track/player';
 import TrackDetails from './track/details';
 import TrackControls from './track/controls';
 
-import PlayIcon from 'react-icons/lib/md/play-circle-outline';
-import PauseIcon from 'react-icons/lib/md/pause-circle-outline';
+import PlayIcon from 'react-icons/lib/md/play-arrow';
+import PauseIcon from 'react-icons/lib/md/pause';
 
 function playStop(e) {
   e.preventDefault();

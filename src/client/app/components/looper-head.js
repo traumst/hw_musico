@@ -30,10 +30,17 @@ function playAllStopAll(e) {
 @observer
 class LooperHead extends Component {
   
+  syncAll(e) {
+    e.preventDefault();
+    // this.props.store.playlist.sort((a, b) => {
+    //  
+    // })
+  }
+  
   render() {
     // filter out items already in the playlist
     return <div className="looper-head">
-      <a className="sync-all" href="javascript:void(0);">
+      <a className="sync-all" onClick={this.syncAll} href="javascript:void(0);">
         SYNC
       </a>
       <a className="play-all" onClick={playAllStopAll} href="javascript:void(0);">

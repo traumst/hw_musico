@@ -1,0 +1,145 @@
+@defaultBackgroundColor: ghostwhite;
+
+@defaultFontColor: black;
+@defaultFontSize: 14px;
+
+@defaultBorderColor: black;
+@defaultBorderStyle: solid;
+@defaultBorderWidth: 1px;
+@playIconBorderWidth: @defaultBorderWidth * 2;
+@defaultBorder: @defaultBorderColor @defaultBorderStyle @defaultBorderWidth;
+
+@defaultRoundedBorder: 25px;
+@defaultCircleBorder: 50%;
+
+@looperWidth: 350px;
+@playlistWidth: 90%;
+@trackHeight: 50px;
+
+@addTrackDetailsWidth: 80%;
+@addTrackDetailsHeight: 70%;
+
+@trackIconWidth: 10%;
+@trackIconMargin: 3%;
+@trackControlWidth: 25%;
+@trackDetailsWidth: 100% - @trackControlWidth - @trackIconWidth - @trackIconMargin - 2;
+
+@iconFontSize: 32px;
+@borderedIconScale: 70%;
+
+@paleGray: #919191;
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: @defaultFontSize;
+  background-color: @defaultBackgroundColor;
+}
+
+.looper {
+  width: @looperWidth;
+  border-top: @defaultBorder;
+}
+
+.looper a {
+  text-decoration: none;
+  color: @defaultFontColor;
+}
+
+.looper-head {
+  padding: 20px 0 0 0;
+  * {
+    display: inline;
+    margin: 10px 0 10px 30px;
+  }
+}
+
+.sync-all {
+  border: @defaultBorder;
+  padding: 3px 10px;
+  border-radius: @defaultRoundedBorder;
+}
+
+.playlist-label {
+  width: @playlistWidth;
+  padding: 15px 0 5px 30px;
+  border-bottom: @paleGray @defaultBorderStyle @defaultBorderWidth;
+  color: @paleGray;
+}
+
+.playlist {
+  width: @playlistWidth;
+  text-align: center;
+  margin: auto;
+}
+
+.track, .add-track {
+  padding: 7px 0 0 0;
+  height: @trackHeight;
+  border-bottom: @defaultBorder;
+}
+
+.play-button, .plus-button {
+  float: left;
+  font-size: @iconFontSize;
+  border: @defaultBorderColor @defaultBorderStyle @playIconBorderWidth;
+  border-radius: @defaultCircleBorder;
+  width: 10%;
+  margin-right: 3%;
+}
+
+.play-button *, .plus-button * {
+  width: @borderedIconScale;
+}
+
+.add-track-select {
+  background-color: @defaultBackgroundColor;
+  width: @addTrackDetailsWidth;
+  height: @addTrackDetailsHeight;
+  float: left;
+  text-align: left;
+  overflow: hidden;
+  border: none;
+  outline: none;
+}
+
+.track-details {
+  width: @trackDetailsWidth;
+  float: left;
+  text-align: left;
+}
+
+.track-controls {
+  width: @trackControlWidth;
+  float: left;
+  text-align: right;
+  vertical-align: center;
+}
+
+.track-delete, .track-volume {
+  float: right;
+  clear: both;
+  height: 50%;
+  width: 100%;
+  display: inline-table;
+}
+
+.track-volume-icon {
+  float: left;
+  width: 30%;
+}
+
+.track-volume-slider {
+  float: right;
+  width: 58%;
+  margin: 0 2% 0 10%;
+}
+
+.add-first-track-text {
+  float: left;
+  margin: 10px 0 0 0;
+  height: 100%;
+  width: 80%;
+  text-align: center;
+  vertical-align: center;
+}

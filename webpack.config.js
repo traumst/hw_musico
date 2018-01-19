@@ -34,6 +34,12 @@ module.exports = {
             'transform-class-properties'
           ]
         }
+      },
+      {
+        test: /\.less$/,
+        include: APP_DIR,
+        exclude: /(node_modules)/,
+        loader: "style-loader!css-loader!less-loader"
       }
     ]
   }

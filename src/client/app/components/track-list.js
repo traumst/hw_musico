@@ -10,8 +10,7 @@ class Tracklist extends Component {
     return <div className="playlist">
       {/* Maps a list of downloaded tracks to Track components */}
       {this.props.store.playlist && this.props.store.playlist.length ? 
-        this.props.store.playlist.map(track => <Track key={track.id} track={track} store={this.props.store}/>) 
-        : ''}
+        this.props.store.playlist.map(track => <Track key={track.id} track={track} store={this.props.store}/>) : ''}
       <AddTrack store={this.props.store} />
     </div>
   }

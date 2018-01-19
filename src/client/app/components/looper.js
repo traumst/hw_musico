@@ -1,11 +1,13 @@
 import React, {Component} from "react";
-import {observable} from "mobx";
+import {observable, autorun} from "mobx";
 import {observer} from 'mobx-react';
 
-import axios from 'axios'
+import axios from 'axios';
 
 import LooperHead from './looper-head';
 import TrackList from './track-list';
+
+require("./../css/style.less");
 
 @observer
 class Looper extends Component {
@@ -13,8 +15,23 @@ class Looper extends Component {
   @observable
   store = {
     tracklist: [],
-    playlist: []
+    playlist: [{
+      "id":2,
+      "url":"https://s3.amazonaws.com/candidate-task/Track+2.mp3",
+      "owner":"Yonatan Pistiner"
+    }]
   };
+  
+  constructor(props) {
+    super(props);
+    autorun(() => {
+      console.log('#########', this.store.playlist.length)
+      // this.store.playlist = this.store.playlist.map((track) => {
+      //   track.buffer = 
+      //   return track;
+      // })
+    })
+  }
   
   componentDidMount() {
     // download HARDCODED track list
