@@ -1,0 +1,109 @@
+body {
+    font: 14px sans-serif Roboto;
+    background-color: ghostwhite;
+}
+
+.looper {
+    width: 350px;
+    border-top: black solid 1px;
+}
+
+.looper a {
+    text-decoration: none;
+    color: black;
+}
+
+.looper-head {
+    padding: 20px 0 0 0;
+}
+
+.looper-head * {
+    display: inline;
+    margin: 10px 0 10px 30px;
+}
+
+.looper-head .add-track {
+    overflow: hidden;
+}
+
+.add-track {
+    width: 30px;
+}
+
+.styled-select {
+    background: url(https://storage.googleapis.com/material-icons/external-assets/v4/icons/svg/ic_playlist_add_black_24px.svg) no-repeat 100%;
+    color: transparent;
+    height: 30px;
+    width: 30px;
+    overflow: hidden;
+    border: none;
+}
+
+.styled-select * {
+    color: ghostwhite;
+    background-color: grey;
+}
+
+.sync-all {
+    border: black solid 1px;
+    padding: 3px 10px;
+    border-radius: 25px;
+}
+
+.playlist-label {
+    width: 90%;
+    padding: 15px 0 5px 30px;
+    border-bottom: #919191 solid 1px;
+    color: #919191;
+}
+
+.playlist {
+    width: 90%;
+    text-align: center;
+    margin: auto;
+}
+
+.track {
+    padding: 7px 0 0 0;
+    height: 50px;
+    border-bottom: black solid 1px;
+}
+
+.play-button {
+    float: left;
+    width: 15%;
+    font-size: 35px;
+}
+
+.track-details {
+    float: left;
+    width: 60%;
+    text-align: left;
+}
+
+.track-controls {
+    float: left;
+    width: 25%;
+    text-align: right;
+    vertical-align: center;
+}
+
+.track-delete, .track-volume {
+    float: right;
+    clear: both;
+    height: 50%;
+    width: 100%;
+    display: inline-table;
+}
+
+.track-volume-icon {
+    float: left;
+    width: 30%;
+}
+
+.track-volume-slider {
+    float: right;
+    width: 58%;
+    margin: 0 2% 0 10%;
+}
+
