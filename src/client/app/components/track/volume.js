@@ -14,14 +14,14 @@ class TrackVolume extends Component {
       <div className="track-volume-slider">
         <Slider
           min={0}
-          max={1}
-          value={this.props.store.volume}
+          max={100}
+          value={this.props.store.volume * 100}
           sliderSize={2}
-          sliderColor="#111111"
+          sliderColor="silver"
           trackColor="#111111"
-          thumbSize={8}
+          thumbSize={12}
           thumbColor="#111111"
-          onChange={newVolume => this.props.store.volume = newVolume.percent}
+          onChange={newVolume => { this.props.store.volume = newVolume.percent }}
         />
       </div>
     </div>

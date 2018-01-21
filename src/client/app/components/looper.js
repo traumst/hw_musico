@@ -1,13 +1,10 @@
 import React, {Component} from "react";
-import {observable, autorun} from "mobx";
+import {observable} from "mobx";
 import {observer} from 'mobx-react';
-
 import axios from 'axios';
 
 import LooperHead from './looper-head';
 import TrackList from './track-list';
-
-require("./../css/style.less");
 
 @observer
 class Looper extends Component {
@@ -16,34 +13,30 @@ class Looper extends Component {
   store = {
     tracklist: [],
     playlist: [{
-      "id":2,
-      "url":"https://s3.amazonaws.com/candidate-task/Track+2.mp3",
-      "owner":"Yonatan Pistiner"
-    }]
+      "id":6,
+      "url":"https://s3.amazonaws.com/candidate-task/Track+6",
+      "owner":"Barak Inbar",
+      "title":"short drums"
+    }],
+    audio: []
   };
   
-  constructor(props) {
-    super(props);
-    autorun(() => {
-      console.log('#########', this.store.playlist.length)
-      // this.store.playlist = this.store.playlist.map((track) => {
-      //   track.buffer = 
-      //   return track;
-      // })
-    })
-  }
-  
   componentDidMount() {
-    // download HARDCODED track list
+    // download HARDCODED player list
     axios.get(`public/trackList.json`)
       .then(res => {
         // update state to reflect received data
         this.store.tracklist = res.data.map(track => {
+          // get the filename from url
+          let fileName = track.url.slice(track.url.lastIndexOf('/') + 1);
+          // remove file extension
+          let title = fileName.slice(0, fileName.lastIndexOf('.') > -1 ?
+              fileName.lastIndexOf('.') : fileName.length);
           return {
             id: track.id,
             url: track.url,
             owner: track.owner,
-            title: track.url.slice(track.url.lastIndexOf('/') + 1)
+            title: title
           }
         });
       })
@@ -57,7 +50,6 @@ class Looper extends Component {
       <LooperHead
         store={this.store}  
       />
-      <div className="playlist-label">Select tracks</div>
       <TrackList
         store={this.store}
       />

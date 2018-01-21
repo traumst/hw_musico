@@ -1,12 +1,13 @@
 import React from 'react';
 
 import DeleteIcon from 'react-icons/lib/md/delete';
+// import DeleteIcon from 'react-icons/lib/ti/times';
 
 const TrackDelete = (props) => (
   <div className="track-delete">
     <a onClick={()=>{
-      console.log(props.trackId);
-      props.store.playlist = props.store.playlist.filter(track => track.id !== props.trackId);
+	    props.store.player.stop();
+      props.looperStore.playlist = props.looperStore.playlist.filter(track => track.id !== props.trackId);
     }}>
       <DeleteIcon />
     </a>

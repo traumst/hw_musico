@@ -1,138 +1,213 @@
-@defaultBackgroundColor: ghostwhite;
+@defaultBackgroundColor: white;
 
 @defaultFontColor: black;
-@defaultFontSize: 14px;
+@defaultFontSize: 16px;
+//@defaultFontFamily: 'Arial', sans-serif;
+@defaultFontFamily:  "Arial Narrow", Arial, sans-serif;;
+@defaultLetterSpacing: .7px;
 
 @defaultBorderColor: black;
 @defaultBorderStyle: solid;
 @defaultBorderWidth: 1px;
-@playIconBorderWidth: @defaultBorderWidth * 2;
 @defaultBorder: @defaultBorderColor @defaultBorderStyle @defaultBorderWidth;
 
 @defaultRoundedBorder: 25px;
 @defaultCircleBorder: 50%;
 
-@looperWidth: 350px;
+@looperWidth: 300px;
 @playlistWidth: 90%;
-@trackHeight: 50px;
+@trackHeight: 58px;
 
 @addTrackDetailsWidth: 80%;
 @addTrackDetailsHeight: 70%;
 
-@trackIconWidth: 10%;
-@trackIconMargin: 3%;
+@playIconBorderWidth: @defaultBorderWidth;
+@playIconWidth: 12%;
+@playIconMargin: 5%;
 @trackControlWidth: 25%;
-@trackDetailsWidth: 100% - @trackControlWidth - @trackIconWidth - @trackIconMargin - 2;
+@trackDetailsWidth: 100% - @trackControlWidth - @playIconWidth - @playIconMargin - 5;
 
 @iconFontSize: 32px;
-@borderedIconScale: 70%;
+@borderedIconScale: 80%;
 
-@paleGray: #919191;
+@paleGray: #bbbbbb;
 
+* {
+  text-rendering: optimizeLegibility;
+}
 
 body {
-  font-family: 'Roboto', sans-serif;
-  font-size: @defaultFontSize;
-  background-color: @defaultBackgroundColor;
+  font-family:        @defaultFontFamily;
+  font-size:          @defaultFontSize;
+  background-color:   @defaultBackgroundColor;
+  letter-spacing:     @defaultLetterSpacing;
+  filter: drop-shadow(8px 8px 30px gray);
 }
 
 .looper {
-  width: @looperWidth;
-  border-top: @defaultBorder;
+  width:              @looperWidth;
+  //border-top: @defaultBorder;
 }
 
 .looper a {
+  color:              @defaultFontColor;
   text-decoration: none;
-  color: @defaultFontColor;
 }
 
 .looper-head {
-  padding: 20px 0 0 0;
+  padding: 12px 0 0 0;
   * {
     display: inline;
-    margin: 10px 0 10px 30px;
+    margin: 10px 0 10px 20px;
   }
 }
 
 .sync-all {
-  border: @defaultBorder;
-  padding: 3px 10px;
-  border-radius: @defaultRoundedBorder;
+  border:             @defaultBorder;
+  border-radius:      @defaultRoundedBorder;
+  padding: 8px 16px 6px;
 }
 
 .playlist-label {
-  width: @playlistWidth;
-  padding: 15px 0 5px 30px;
-  border-bottom: @paleGray @defaultBorderStyle @defaultBorderWidth;
-  color: @paleGray;
+  color:              @paleGray;
+  border-bottom:      @paleGray @defaultBorderStyle @defaultBorderWidth/2;
+  width:              @playlistWidth;
+  padding: 15px 0 5px 20px;
 }
 
 .playlist {
-  width: @playlistWidth;
+  width:              @playlistWidth;
   text-align: center;
   margin: auto;
 }
 
 .track, .add-track {
-  padding: 7px 0 0 0;
-  height: @trackHeight;
-  border-bottom: @defaultBorder;
+  position: relative;
+  height:             @trackHeight;
+  border-bottom:      @defaultBorder;
+  padding: 10px 0 0 0;
 }
 
-.play-button, .plus-button {
+.web-audio-player {
+  display: none;
+}
+
+.progress {
+  //background-color: #337ab7;
+  position: absolute;
+  margin: -1.7px 0 0 0;
+  padding: 1px 0 0 0;
+
+  .react-sweet-progress-circle-outer {
+    position: relative;
+    width: 41px !important;
+  }
+  // hide percentage
+  .react-sweet-progress-symbol-absolute {
+    display: none;
+  }
+  // remove the empty / white circle
+  .react-sweet-progress-circle path:first-child {
+    display: none;
+  }
+}
+
+.play-button {
   float: left;
-  font-size: @iconFontSize;
-  border: @defaultBorderColor @defaultBorderStyle @playIconBorderWidth;
-  border-radius: @defaultCircleBorder;
-  width: 10%;
-  margin-right: 3%;
+  font-size:          @iconFontSize;
+  width:              @playIconWidth;
+  margin-right:       @playIconMargin;
+  border:             @defaultBorderColor @defaultBorderStyle @playIconBorderWidth;
+  border-radius:      @defaultCircleBorder;
+  padding: 3px;
+}
+
+.plus-button {
+  .play-button;
+  color:              @paleGray;
+  border:             @paleGray @defaultBorderStyle @playIconBorderWidth;
 }
 
 .play-button *, .plus-button * {
-  width: @borderedIconScale;
+  width:              @borderedIconScale;
+}
+
+select {
+  font-size:          @defaultFontSize;
+  font-family:        @defaultFontFamily;
+  letter-spacing:     @defaultLetterSpacing;
 }
 
 .add-track-select {
-  background-color: @defaultBackgroundColor;
-  width: @addTrackDetailsWidth;
-  height: @addTrackDetailsHeight;
+  width:              @addTrackDetailsWidth;
+  height:             @addTrackDetailsHeight;
   float: left;
   text-align: left;
   overflow: hidden;
   border: none;
   outline: none;
+  background: transparent;
+  z-index: -1;
+}
+
+.add-track select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .track-details {
-  width: @trackDetailsWidth;
+  width:              @trackDetailsWidth;
   float: left;
   text-align: left;
+  .track-artist {
+    height: 35%;
+  }
+  .track-title {
+    height: 30%;
+    font-size:        @defaultFontSize - 2;
+  }
 }
 
 .track-controls {
-  width: @trackControlWidth;
+  width:              @trackControlWidth;
   float: left;
   text-align: right;
   vertical-align: center;
 }
 
-.track-delete, .track-volume {
+.track-controls-base {
   float: right;
   clear: both;
-  height: 50%;
   width: 100%;
   display: inline-table;
+  vertical-align: center;
+}
+
+
+@controlDeleteHeight: 40%;
+.track-delete {
+  .track-controls-base;
+  height:             @controlDeleteHeight;
+  font-size:          @defaultFontSize + 2;
+  margin-top: 2px;
+}
+
+.track-volume {
+  .track-controls-base;
+  height:      100% - @controlDeleteHeight;
 }
 
 .track-volume-icon {
   float: left;
   width: 30%;
+  font-size: 140%;
 }
 
 .track-volume-slider {
-  float: right;
+  float: left;
   width: 58%;
-  margin: 0 2% 0 10%;
+  margin: 0 0 0 12%;
 }
 
 .add-first-track-text {

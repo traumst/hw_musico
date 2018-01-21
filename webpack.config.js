@@ -8,11 +8,12 @@ module.exports = {
   output: {
     path: BUILD_DIR,
     filename: 'bundle.js',
-    publicPath: '/api/'
+    publicPath: '/public/'
   },
   devServer: {
     contentBase: 'src/client',
     port: 3000,
+    // host: "0.0.0.0",
     inline: true,
     hot: true
   },

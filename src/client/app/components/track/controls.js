@@ -8,7 +8,9 @@ import TrackVolume from './volume';
 class TrackControls extends Component {
   render() {
     return <div className="track-controls">
-      <TrackDelete store={this.props.looperStore} trackId={this.props.trackId} />
+      <TrackDelete looperStore={this.props.looperStore}
+                   store={this.props.store}
+                   trackId={this.props.trackId} />
       <TrackVolume store={this.props.store} />
     </div>
   }
