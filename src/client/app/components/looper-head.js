@@ -1,32 +1,6 @@
 import React, {Component} from "react";
 import {observer} from 'mobx-react';
 
-function playAllStopAll(e) {
-  e.preventDefault();
-  let allTracks = document.querySelectorAll('.playlist > div > audio');
-  if (e.target.text === 'PLAY ALL') {
-    // stop and rewind
-    for (let i = 0; i < allTracks.length; i++) {
-      allTracks[i].pause();
-      allTracks[i].currentTime = 0;
-    }
-    // enable looping and play
-    for (let i = 0; i < allTracks.length; i++) {
-      allTracks[i].loop = true;
-      allTracks[i].play();
-    }
-    e.target.text = 'STOP ALL'
-  } else {
-    // stop and rewind
-    for (let i = 0; i < allTracks.length; i++) {
-      allTracks[i].loop = false;
-      allTracks[i].pause();
-      allTracks[i].currentTime = 0;
-    }
-    e.target.text = 'PLAY ALL'
-  }
-}
-
 @observer
 class LooperHead extends Component {
   

@@ -1,9 +1,7 @@
 import React, {Component} from "react";
-import {observable, autorun} from "mobx";
+import {observable} from "mobx";
 import {observer} from "mobx-react";
-
-import { Progress } from 'react-sweet-progress';
-// import "react-sweet-progress/lib/style.css";
+import {Progress} from 'react-sweet-progress';
 
 import Player from './track/player';
 import TrackDetails from './track/details';
@@ -50,7 +48,7 @@ class Track extends Component {
                 color: '#73b700'
               }
             }}
-            strokeWidth={6}
+            strokeWidth={8}
             width={30}
             percent={this.store.played * 100}
             status="success" />

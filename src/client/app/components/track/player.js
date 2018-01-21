@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {observer} from "mobx-react";
 
-import {Howl, Howler} from 'howler';
+import {Howl} from 'howler';
 
 @observer
 class Player extends Component{
@@ -15,7 +15,7 @@ class Player extends Component{
 		
 	  // Create new player
 		this.player = new Howl({
-			// html5: true, // MUST use HTML5 due to CORS
+			html5: true, // MUST use HTML5 due to CORS
 			src: [props.src],
 			volume: props.store.volume,
 			preload: true,
