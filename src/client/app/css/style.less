@@ -187,17 +187,18 @@ select {
 }
 
 
-@controlDeleteHeight: 40%;
+@deleteVolumeHeight: 40%;
 .track-delete {
   .track-controls-base;
-  height:             @controlDeleteHeight;
+  height: @deleteVolumeHeight;
   font-size:          @defaultFontSize + 2;
   margin-top: 2px;
 }
 
 .track-volume {
   .track-controls-base;
-  height:      100% - @controlDeleteHeight;
+  height: @deleteVolumeHeight;
+  position: relative;
 }
 
 .track-volume-icon {
@@ -210,6 +211,8 @@ select {
   float: left;
   width: 58%;
   margin: 0 0 0 12%;
+  position: relative;
+  top: 2px;
 }
 
 .add-first-track-text {

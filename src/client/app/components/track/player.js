@@ -1,12 +1,10 @@
 import React, {Component} from "react";
 import {observer} from "mobx-react";
-
 import {Howl} from 'howler';
 
 @observer
 class Player extends Component{
 
-	audioBuffer = null;
 	player = null;
 	updatePlayProgress = null;
 	

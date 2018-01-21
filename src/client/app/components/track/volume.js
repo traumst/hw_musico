@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {observer} from "mobx-react/index";
+import {observer} from "mobx-react";
 import Slider from 'react-simple-range';
 
 import VolumeIcon from 'react-icons/lib/md/volume-up';

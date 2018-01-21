@@ -1,7 +1,6 @@
 import React from 'react';
 
 import DeleteIcon from 'react-icons/lib/md/delete';
-// import DeleteIcon from 'react-icons/lib/ti/times';
 
 const TrackDelete = (props) => (
   <div className="track-delete">

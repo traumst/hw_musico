@@ -15,14 +15,14 @@ class LooperHead extends Component {
 				player.stop();
 			}
 			for (let player of this.props.store.audio) {
-				player.loop = true;
+				player.loop(true);
 				player.play();
 			}
 			e.target.text = 'STOP ALL'
 		} else {
 		  // Stop All
 			for (let player of this.props.store.audio) {
-				player.loop = false;
+				player.loop(false);
 				player.stop();
 			}
 			e.target.text = 'PLAY ALL'
