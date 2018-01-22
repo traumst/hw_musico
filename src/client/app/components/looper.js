@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import {observable} from "mobx";
+import React, {Component} from 'react';
+import {observable} from 'mobx';
 import {observer} from 'mobx-react';
 import axios from 'axios';
 
@@ -8,7 +8,7 @@ import TrackList from './track-list';
 
 @observer
 class Looper extends Component {
-  
+
   @observable
   store = {
     tracklist: [],
@@ -16,10 +16,10 @@ class Looper extends Component {
     audio: [],
     playing: false
   };
-  
+
   componentDidMount() {
     // download HARDCODED player list
-    axios.get(`public/trackList.json`)
+    axios.get('public/trackList.json')
       .then(res => {
         // update state to reflect received data
         this.store.tracklist = res.data.map(track => {
@@ -33,25 +33,24 @@ class Looper extends Component {
             url: track.url,
             owner: track.owner,
             title: title
-          }
+          };
         });
       })
       .catch(err => {
-        console.error(err, "Failed to parse Track List.\nThis is a problem.")
-      })
+        console.error(err, 'Failed to parse Track List.\nThis is a problem.');
+      });
   }
-  
+
   render() {
-    console.log('############', this.store.playing)
     return <div className="looper">
       <LooperHead
-        store={this.store}  
+        store={this.store}
       />
       <TrackList
         store={this.store}
       />
-      </div>
-  };
+      </div>;
+  }
 }
 
 export default Looper;

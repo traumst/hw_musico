@@ -1,6 +1,6 @@
-import React, {Component} from "react";
-import {observable} from "mobx";
-import {observer} from "mobx-react";
+import React, {Component} from 'react';
+import {observable} from 'mobx';
+import {observer} from 'mobx-react';
 import {Progress} from 'react-sweet-progress';
 
 import Player from './track/player';
@@ -20,21 +20,21 @@ class Track extends Component {
     played: 0,
     player: null
   };
-  
-  playStop(e) {
-    if (this.store.playIcon) {
-	    this.store.player.pause();
-    } else {
-	    this.store.player.play();
-    }
-	  this.store.player.loop = false;
-  }
-  
+
+	playStop() {
+		if (this.store.playIcon) {
+			this.store.player.pause();
+		} else {
+			this.store.player.play();
+		}
+		this.store.player.loop = false;
+	}
+
   render() {
-    return <div id={"player-" + this.props.track.id}
+    return <div id={`player-${this.props.track.id}`}
                 className="track">
       <Player
-        src={this.props.track.url}
+        track={this.props.track}
         store={this.store}
         trackListStore={this.props.store}
       />
@@ -50,7 +50,7 @@ class Track extends Component {
             }}
             strokeWidth={8}
             width={30}
-            percent={this.store.played * 100}
+            percent={100 * this.store.played}
             status="success" />
         </div>
         <div className="play-button">
@@ -62,7 +62,7 @@ class Track extends Component {
       <TrackControls store={this.store}
                      looperStore={this.props.store}
                      trackId={this.props.track.id} />
-    </div>
+    </div>;
   }
 }
 

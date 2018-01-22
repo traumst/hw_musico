@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import {observer} from "mobx-react";
+import React, {Component} from 'react';
+import {observer} from 'mobx-react';
 import {Howl} from 'howler';
 
 @observer
@@ -7,52 +7,51 @@ class Player extends Component{
 
 	player = null;
 	updatePlayProgress = null;
-	
+
+	unsetAudio(store, trackListStore, track) {
+		clearInterval(this.updatePlayProgress);
+		store.playIcon = false;
+		trackListStore.playing = trackListStore.audio.some(existing => existing.playing());
+	}
+
 	constructor(props) {
 		super(props);
-		
-	  // Create new player
+		let {store, trackListStore, track} = props;
+		// Create new player
 		this.player = new Howl({
 			html5: true, // MUST use HTML5 due to CORS
-			src: [props.src],
-			volume: props.store.volume,
+			src: [track.url],
+			volume: store.volume,
 			preload: true,
 			loop: false,
 			autoplay: false
 		});
+		this.player.id = track.id;
 		this.player.on('play', () => {
 			this.updatePlayProgress = setInterval(() => {
-				props.store.played = this.player.seek() / this.player.duration();
+				store.played = this.player.seek() / this.player.duration();
 			}, 100);
-			props.store.playIcon = true;
-			props.trackListStore.playing = true;
+			store.playIcon = true;
+			trackListStore.playing = true;
 		});
-		this.player.on('pause', () => {
-			clearInterval(this.updatePlayProgress);
-			props.store.playIcon = false;
-			props.trackListStore.playing = props.trackListStore.audio.some(track => track.playing());
-		});
+		this.player.on('pause', () => this.unsetAudio(store, trackListStore, track));
 		this.player.on('stop', () => {
-			clearInterval(this.updatePlayProgress);
-			props.store.playIcon = false;
-			props.trackListStore.playing = props.trackListStore.audio.some(track => track.playing());
-			props.store.played = 0;
+			this.unsetAudio(store, trackListStore, track);
+			store.played = 0;
 		});
 		this.player.on('end', () => {
-			clearInterval(this.updatePlayProgress);
-			props.store.playIcon = false;
-			props.trackListStore.playing = props.trackListStore.audio.some(track => track.playing());
-			props.store.played = 0;
+			this.unsetAudio(store, trackListStore, track);
+			store.played = 0;
 		});
 		// Register current audio on Track element
-		props.store.player = this.player;
+		store.player = this.player;
 		// Register current audio on Looper element
-		props.trackListStore.audio.push(this.player);
+		trackListStore.audio.push(this.player);
 	}
 
 	render() {
 		this.player.volume(this.props.store.volume);
-		return <div className="web-audio-player"></div>
+		return <div className="web-audio-player"></div>;
 	}
 }
 

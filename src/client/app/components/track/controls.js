@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import {observer} from "mobx-react/index";
+import React, {Component} from 'react';
+import {observer} from 'mobx-react/index';
 
 import TrackDelete from './delete';
 import TrackVolume from './volume';
@@ -12,7 +12,7 @@ class TrackControls extends Component {
                    store={this.props.store}
                    trackId={this.props.trackId} />
       <TrackVolume store={this.props.store} />
-    </div>
+    </div>;
   }
 }
 
