@@ -26,8 +26,8 @@ module.exports = {
         loader: 'babel-loader',
         query: {
           presets: [
-            'latest', 
-            'react', 
+            'latest',
+            'react',
             'stage-0'
           ],
           plugins: [
@@ -40,7 +40,7 @@ module.exports = {
         test: /\.less$/,
         include: APP_DIR,
         exclude: /(node_modules)/,
-        loader: "style-loader!css-loader!less-loader"
+        loader: 'style-loader!css-loader!less-loader'
       }
     ]
   }

@@ -25,19 +25,23 @@ class Player extends Component{
 				props.store.played = this.player.seek() / this.player.duration();
 			}, 100);
 			props.store.playIcon = true;
+			props.trackListStore.playing = true;
 		});
 		this.player.on('pause', () => {
 			clearInterval(this.updatePlayProgress);
 			props.store.playIcon = false;
+			props.trackListStore.playing = props.trackListStore.audio.some(track => track.playing());
 		});
 		this.player.on('stop', () => {
 			clearInterval(this.updatePlayProgress);
 			props.store.playIcon = false;
+			props.trackListStore.playing = props.trackListStore.audio.some(track => track.playing());
 			props.store.played = 0;
 		});
 		this.player.on('end', () => {
 			clearInterval(this.updatePlayProgress);
 			props.store.playIcon = false;
+			props.trackListStore.playing = props.trackListStore.audio.some(track => track.playing());
 			props.store.played = 0;
 		});
 		// Register current audio on Track element

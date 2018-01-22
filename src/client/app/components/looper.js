@@ -12,13 +12,9 @@ class Looper extends Component {
   @observable
   store = {
     tracklist: [],
-    playlist: [{
-      "id":6,
-      "url":"https://s3.amazonaws.com/candidate-task/Track+6",
-      "owner":"Barak Inbar",
-      "title":"short drums"
-    }],
-    audio: []
+    playlist: [],
+    audio: [],
+    playing: false
   };
   
   componentDidMount() {
@@ -46,6 +42,7 @@ class Looper extends Component {
   }
   
   render() {
+    console.log('############', this.store.playing)
     return <div className="looper">
       <LooperHead
         store={this.store}  

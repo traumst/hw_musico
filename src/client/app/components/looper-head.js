@@ -10,19 +10,20 @@ class LooperHead extends Component {
 	
 	playAllStopAll(e) {
     e.preventDefault();
-		if (e.target.text === 'PLAY ALL') {
+		if (e.target.text === 'PLAY ALL' && this.props.store.audio.length) {
 			for (let player of this.props.store.audio) {
 				player.stop();
 			}
 			for (let player of this.props.store.audio) {
-				player.loop(true);
+				player.loop = true;
 				player.play();
 			}
 			e.target.text = 'STOP ALL'
 		} else {
 		  // Stop All
 			for (let player of this.props.store.audio) {
-				player.loop(false);
+				// console.log(player)
+				player.loop = false;
 				player.stop();
 			}
 			e.target.text = 'PLAY ALL'
@@ -30,6 +31,7 @@ class LooperHead extends Component {
   }
   
   render() {
+  	// let howlsPlaying = window.Howler._howls.some(h => h.playing());
     // filter out items already in the playlist
     return <div>
       <div className="looper-head">
@@ -37,7 +39,7 @@ class LooperHead extends Component {
           SYNC
         </a>
         <a className="play-all" onClick={this.playAllStopAll.bind(this)} href="javascript:void(0);">
-          PLAY ALL
+	        {this.props.store.playing > 0 ? 'STOP ALL' : 'PLAY ALL'}
         </a>
       </div>
       <div className="playlist-label">

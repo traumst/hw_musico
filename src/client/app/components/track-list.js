@@ -4,10 +4,13 @@ import {observer} from 'mobx-react';
 import Track from './track';
 import AddTrack from './add-track';
 
+import {Howler} from 'howler';
+
 // Maps tracks in the playlist to the to the Track element
 @observer
 class Tracklist extends Component {
   render() {
+    
     return <div className="playlist">
       {/* Maps a list of downloaded tracks to Track components */}
       {this.props.store.playlist && this.props.store.playlist.length ? 
