@@ -37,6 +37,14 @@ This will recompile BUNDLE.JS file before starting the server and every time whe
 
 I will still be contributing a few more updates related to BPM and Sync.
 
+## What's next?
+
+I am going to do a bit of research on the WebAudio and it's API to be able to implement all the functionality related to BPM.
+
+The idea is to employ techniques described in [this article](http://joesul.li/van/beat-detection-using-web-audio/) 
+
+This will then enable me to Sync between the tracks, adjust tracks BPM, etc.
+
 ## License
 
 Public Domain
