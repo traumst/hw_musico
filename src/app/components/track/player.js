@@ -8,7 +8,7 @@ class Player extends Component{
 	player = null;
 	updatePlayProgress = null;
 
-	unsetAudio(store, trackListStore, track) {
+	unsetAudio(store, trackListStore) {
 		clearInterval(this.updatePlayProgress);
 		store.playIcon = false;
 		trackListStore.playing = trackListStore.audio.some(existing => existing.playing());
@@ -34,13 +34,13 @@ class Player extends Component{
 			store.playIcon = true;
 			trackListStore.playing = true;
 		});
-		this.player.on('pause', () => this.unsetAudio(store, trackListStore, track));
+		this.player.on('pause', () => this.unsetAudio(store, trackListStore));
 		this.player.on('stop', () => {
-			this.unsetAudio(store, trackListStore, track);
+			this.unsetAudio(store, trackListStore);
 			store.played = 0;
 		});
 		this.player.on('end', () => {
-			this.unsetAudio(store, trackListStore, track);
+			this.unsetAudio(store, trackListStore);
 			store.played = 0;
 		});
 		// Register current audio on Track element
