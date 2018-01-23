@@ -1,7 +1,7 @@
 const path = require('path');
 
-const BUILD_DIR = path.join(__dirname, 'src/client/public');
-const APP_DIR = path.join(__dirname, 'src/client/app');
+const BUILD_DIR = path.join(__dirname, 'src/public');
+const APP_DIR = path.join(__dirname, 'src/app');
 
 module.exports = {
   entry: APP_DIR + '/index.jsx',
@@ -11,7 +11,7 @@ module.exports = {
     publicPath: '/public/'
   },
   devServer: {
-    contentBase: 'src/client',
+    contentBase: 'src',
     port: 3000,
     // host: "0.0.0.0",
     inline: true,
