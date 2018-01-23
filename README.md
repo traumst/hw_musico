@@ -33,6 +33,10 @@ npm run dev
 ```
 This will recompile BUNDLE.JS file before starting the server and every time when changes are saved.
 
+## Ongoing
+
+I will still be contributing a few more updates related to BPM and Sync.
+
 ## License
 
 Public Domain

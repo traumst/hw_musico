@@ -4,9 +4,9 @@ import {observer} from 'mobx-react';
 import Track from './track';
 import AddTrack from './add-track';
 
-// Maps tracks in the playlist to the to the Track element
+// The playlist of the Looper
 @observer
-class Tracklist extends Component {
+class Playlist extends Component {
   render() {
     return <div className="playlist">
       {/* Maps a list of downloaded tracks to Track components */}
@@ -15,11 +15,10 @@ class Tracklist extends Component {
           key={track.id}
           track={track}
           store={this.props.store}/>) : ''}
-      {/* Last player is always AddTrack */}
-      <AddTrack
-       store={this.props.store} />
+      {/* Last row is AddTrack, while there are tracks to add */}
+      {this.props.store.playlist.length !== this.props.store.tracklist.length ? <AddTrack store={this.props.store} /> : ''}
     </div>;
   }
 }
 
-export default Tracklist;
+export default Playlist;

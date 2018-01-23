@@ -4,17 +4,20 @@ import {observer} from 'mobx-react';
 import axios from 'axios';
 
 import LooperHead from './looper-head';
-import TrackList from './track-list';
+import PlayList from './play-list';
 
 @observer
 class Looper extends Component {
 
+  // global store, holds playlists and properties relevant to the Looper and
+  // its sub-components
   @observable
   store = {
     tracklist: [],
     playlist: [],
     audio: [],
-    playing: false
+    playing: false,
+    looping: false
   };
 
   componentDidMount() {
@@ -54,7 +57,7 @@ class Looper extends Component {
       <LooperHead
         store={this.store}
       />
-      <TrackList
+      <PlayList
         store={this.store}
       />
       </div>;

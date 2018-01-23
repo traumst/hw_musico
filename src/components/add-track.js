@@ -6,12 +6,12 @@ import Track from './track';
 
 import PlusIcon from 'react-icons/lib/md/add';
 
-// A class that fits into Track Elements
-// Used for adding Tracks, clicking on the playlist
+// A class that fits into Track element
+// Used for adding Tracks to the Playlist
 @observer
 class AddTrack extends Track {
   handleAdd(e) {
-    if (!e) throw new Error('Couldn\'t find a track matching');
+    if (!e) throw new Error('Couldn\'t find matching track');
     this.props.store.playlist.push(e);
   }
 

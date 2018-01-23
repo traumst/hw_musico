@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
 
+// Upper part of the looper
+// Sync and Play All
 @observer
 class LooperHead extends Component {
 
+	// Dummy method
   syncAll(e) {
     e.preventDefault();
-    // Dummy method
   }
 
 	playAllStopAll(e) {
@@ -15,6 +17,8 @@ class LooperHead extends Component {
 			for (let player of this.props.store.audio) {
 				player.stop();
 			}
+			// Play All
+			this.props.store.looping = true;
 			for (let player of this.props.store.audio) {
 				player.loop = true;
 				player.play();
@@ -22,6 +26,7 @@ class LooperHead extends Component {
 			e.target.text = 'STOP ALL';
 		} else {
 			// Stop All
+			this.props.store.looping = false;
 			for (let player of this.props.store.audio) {
 				player.loop = false;
 				player.stop();
@@ -31,10 +36,6 @@ class LooperHead extends Component {
   }
 
   render() {
-		// let {
-		// 	store: { playing: isPlaying }
-		// } = this.props;
-    // filter out items already in the playlist
     return <div>
       <div className="looper-head">
         <a className="sync-all"
