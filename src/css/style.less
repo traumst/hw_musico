@@ -129,29 +129,29 @@ body {
 
 .play-button {
   float: left;
-  font-size:          @iconFontSize;
-  width:              @playIconWidth;
-  margin-right:       @playIconMargin;
-  border:             @defaultBorderColor @defaultBorderStyle @playIconBorderWidth;
-  border-radius:      @defaultCircleBorder;
+  font-size:            @iconFontSize;
+  width:                @playIconWidth;
+  margin-right:         @playIconMargin;
+  border:               @defaultBorderColor
+                        @defaultBorderStyle
+                        @playIconBorderWidth;
+  border-radius:        @defaultCircleBorder;
   padding: 3px;
 }
 
 .plus-button {
   .play-button;
-  //color:              @paleGray;
-  //border:             @paleGray @defaultBorderStyle @playIconBorderWidth;
-  border: @defaultBorderColor
-          @defaultBorderStyle
-          @defaultBorderWidth;
+  border:               @defaultBorderColor
+                        @defaultBorderStyle
+                        @defaultBorderWidth;
 }
 
 .play-button *, .plus-button * {
-  width:              @borderedIconScale;
+  width:                @borderedIconScale;
 }
 
 .add-track .track-details {
-  text-shadow: @defaultTextShadow;
+  text-shadow:          @defaultTextShadow;
 }
 
 .add-track .track-details div {
@@ -164,16 +164,16 @@ body {
 }
 
 .add-track .track-details div div {
-  border-bottom:      @paleGray
-                      @defaultBorderStyle
-                      @defaultBorderWidth / 2;
+  border-bottom:        @paleGray
+                        @defaultBorderStyle
+                        @defaultBorderWidth / 2;
   overflow: visible;
   padding: 4px 5px;
 }
 
 .add-track-select {
-  font-size:          @defaultFontSize;
-  height:             @addTrackDetailsHeight;
+  font-size:            @defaultFontSize;
+  height:               @addTrackDetailsHeight;
   float: left;
   text-align: left;
   overflow: hidden;
@@ -186,13 +186,13 @@ body {
 }
 
 .add-track-record {
-  border-radius: @defaultRoundedBorder;
+  border-radius:        @defaultRoundedBorder;
   display: contents;
   //background-color - set in JS
 }
 
 .add-track-by {
-  font-size: @defaultFontSize - 2;
+  font-size:            @defaultFontSize - 2;
 }
 
 .add-track-artist {
@@ -200,7 +200,7 @@ body {
 }
 
 .track-details {
-  width:              @trackDetailsWidth;
+  width:                @trackDetailsWidth;
   float: left;
   text-align: left;
   .track-artist {
@@ -208,19 +208,19 @@ body {
   }
   .track-title {
     height: 31%;
-    font-size:        @defaultFontSize - 2;
+    font-size:          @defaultFontSize - 2;
   }
   .track-bpm {
     // Toggle between showing and hiding BPM info on track
     //display: none;
     height: 30%;
-    font-size:        @defaultFontSize - 5;
-    color:            @paleGray - 32;
+    font-size:          @defaultFontSize - 5;
+    color:              @paleGray - 32;
   }
 }
 
 .track-controls {
-  width:              @trackControlWidth;
+  width:                @trackControlWidth;
   float: left;
   text-align: right;
   vertical-align: center;
@@ -237,14 +237,14 @@ body {
 @deleteVolumeHeight: 40%;
 .track-delete {
   .track-controls-base;
-  height: @deleteVolumeHeight;
-  font-size:          @defaultFontSize + 2;
+  height:               @deleteVolumeHeight;
+  font-size:            @defaultFontSize + 2;
   margin-top: 2px;
 }
 
 .track-volume {
   .track-controls-base;
-  height: @deleteVolumeHeight;
+  height:               @deleteVolumeHeight;
   position: relative;
 }
 
