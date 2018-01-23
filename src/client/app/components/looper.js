@@ -28,11 +28,19 @@ class Looper extends Component {
           // remove file extension
           let title = fileName.slice(0, fileName.lastIndexOf('.') > -1 ?
               fileName.lastIndexOf('.') : fileName.length);
+          // HERE we will calculate tracks' BPM.
+          // This will probably rely on Web Audio API and the solution
+          // will be based on this article http://joesul.li/van/beat-detection-using-web-audio/
+          let bpm = (() => {
+            return 'BPM: placeholder';
+          })();
+
           return {
             id: track.id,
             url: track.url,
             owner: track.owner,
-            title: title
+            title: title,
+            bpm: bpm
           };
         });
       })

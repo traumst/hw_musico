@@ -32,7 +32,7 @@ class AddTrack extends Track {
            return <input {...props}
                          id="add-track-id"
                          className="add-track-select track-details"
-                         value="Add Track" />;
+                         value="Add Track..." />;
          }}
          menuStyle={{
            background: 'rgba(255, 255, 255, 1)',
@@ -48,9 +48,9 @@ class AddTrack extends Track {
                          background: isHighlighted ? '#cccccc' : 'white'
                        }}>
              <span className='add-track-title'>{item.title}</span>&nbsp;
-              {item.owner ? <span className="add-track-by">by
-                 <span className="add-track-artist"> {item.owner}</span>
-               </span> : ''}
+              {item.owner ?
+                <span className="add-track-by">by
+                <span className="add-track-artist"> {item.owner}</span></span> : ''}
            </div>;
          }}
          onSelect={this.handleAdd.bind(this)}

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "dev": "./node_modules/.bin/webpack -d && ./node_modules/.bin/webpack-dev-server -d --hot --inline",
     "lint": "esw webpack.config.* src tools --color",
     "lint:watch": "npm run lint -- --watch"
   },
@@ -44,6 +45,7 @@
     "eslint": "^4.16.0",
     "eslint-plugin-react": "^7.5.1",
     "eslint-watch": "^3.1.3",
+    "jsdoc-react-proptypes": "^1.0.3",
     "jsx-loader": "^0.13.2",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",

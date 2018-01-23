@@ -3,7 +3,7 @@
 @defaultFontColor: black;
 @defaultFontSize: 16px;
 @defaultFontFamily:  "Arial Narrow", Arial, sans-serif;;
-@defaultLetterSpacing: .6px;
+@defaultLetterSpacing: 1.5px;
 @defaultTextShadow: 1px 1px 1px lightgray;
 
 @defaultBorderColor: black;
@@ -17,8 +17,8 @@
 @defaultCircleBorder: 50%;
 
 @looperWidth: 300px;
-@playlistWidth: 90%;
-@trackHeight: 58px;
+@playlistWidth: 95%;
+@trackHeight: 60px;
 
 @addTrackDetailsWidth: 80%;
 @addTrackDetailsHeight: 70%;
@@ -27,7 +27,10 @@
 @playIconWidth: 12%;
 @playIconMargin: 5%;
 @trackControlWidth: 25%;
-@trackDetailsWidth: 100% - @trackControlWidth - @playIconWidth - @playIconMargin - 5;
+@trackDetailsWidth: 100% - @trackControlWidth
+                         - @playIconWidth
+                         - @playIconMargin
+                         - 5;
 
 @iconFontSize: 32px;
 @borderedIconScale: 80%;
@@ -152,7 +155,7 @@ body {
 }
 
 .add-track .track-details div {
-  left: 52px !important;
+  left: 40px !important;
 }
 
 .add-track .track-details div input {
@@ -185,7 +188,7 @@ body {
 .add-track-record {
   border-radius: @defaultRoundedBorder;
   display: contents;
-  background-color: @defaultBackgroundColor;
+  //background-color - set in JS
 }
 
 .add-track-by {
@@ -201,11 +204,18 @@ body {
   float: left;
   text-align: left;
   .track-artist {
-    height: 35%;
+    height: 32%;
   }
   .track-title {
-    height: 30%;
+    height: 31%;
     font-size:        @defaultFontSize - 2;
+  }
+  .track-bpm {
+    // Toggle between showing and hiding BPM info on track
+    //display: none;
+    height: 30%;
+    font-size:        @defaultFontSize - 5;
+    color:            @paleGray - 32;
   }
 }
 

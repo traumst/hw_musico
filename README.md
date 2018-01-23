@@ -1,38 +1,38 @@
 # Musico Candidate Task
 
-## Getting Started
+## Intro
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will clone the project to your local machine, into the folder you currently are in the terminal/bash.
 
-### Prerequisites
+## Prerequisites
 
-Must have GIT and `npm` already set up
+Must already have both `git` and `npm`
 
-### Installing
+## Clone and install dependencies
 
-Open terminal in a folder where you want to set the project up
-
-Run
+Open terminal in a folder that you want to download this project to and run following commands to clone from git
+and install dependencies of the project
 ```
-git clone https://github.com/traumst/hw_musico.git AlexLitvak
-cd AlexLitvak
+git clone https://github.com/traumst/hw_musico.git AlexLitvakTask
+cd AlexLitvakTask
 npm install
 ```
 
-## Deployment
+## Runnnig the server on localhost:3000
 
-Inside project folder, execute 
- 
+To start the server run
 ```
 npm start
 ``` 
 
-Alternatively, to rebuild `bundle.js` and then launch the server run
+Once the server is up you can see the component in the browser going to [http://localhost:3000](http://localhost:3000 Title)
 
+Alternatively, to run webpack in an interactive mode run
 ```
-./node_modules/.bin/webpack -d && ./node_modules/.bin/webpack-dev-server -d
+npm run dev
 ```
-
+This will recompile BUNDLE.JS file before starting the server and every time when changes are saved.
 
 ## License
+
 Public Domain

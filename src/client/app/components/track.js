@@ -57,7 +57,8 @@ class Track extends Component {
           {this.store.playIcon ? <PauseIcon/> : <PlayIcon/>}
         </div>
         <TrackDetails artist={this.props.track.owner}
-                      title={this.props.track.title} />
+                      title={this.props.track.title}
+                      bpm={this.props.track.bpm} />
       </div>
       <TrackControls store={this.store}
                      looperStore={this.props.store}
