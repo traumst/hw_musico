@@ -1,6 +1,12 @@
 # Musico Candidate Task
 
-## Intro
+## **BPM**
+
+This branch is dedicated to research on the WebAudio and it's API. To be able to implement all the functionality related to BPM, like adjusting tracks' tempo to the leading track.
+
+The idea is to employ techniques described in [this article](http://joesul.li/van/beat-detection-using-web-audio/)
+
+## Setting up
 
 These instructions will clone the project to your local machine, into the folder you currently are in the terminal/bash.
 
@@ -32,18 +38,6 @@ Alternatively, to run webpack in an interactive mode run
 npm run dev
 ```
 This will recompile BUNDLE.JS file before starting the server and every time when changes are saved.
-
-## Ongoing
-
-I will still be contributing a few more updates related to BPM and Sync.
-
-## What's next?
-
-I am going to do a bit of research on the WebAudio and it's API to be able to implement all the functionality related to BPM.
-
-The idea is to employ techniques described in [this article](http://joesul.li/van/beat-detection-using-web-audio/) 
-
-This will then enable me to Sync between the tracks, adjust tracks BPM, etc.
 
 ## License
 
