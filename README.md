@@ -1,6 +1,6 @@
 # Musico Candidate Task
 
-## **BPM**
+## BPM
 
 This branch is dedicated to research on the WebAudio and it's API. To be able to implement all the functionality related to BPM, like adjusting tracks' tempo to the leading track.
 
