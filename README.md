@@ -25,7 +25,7 @@ To start the server run
 npm start
 ``` 
 
-Once the server is up you can see the component in the browser going to [http://localhost:3000](http://localhost:3000 Title)
+Once the server is up you can see the component in the browser going to [http://localhost:3000](http://localhost:3000)
 
 Alternatively, to run webpack in an interactive mode run
 ```
