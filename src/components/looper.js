@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
-import {observable} from 'mobx';
+import {observable, autorun} from 'mobx';
 import {observer} from 'mobx-react';
 import axios from 'axios';
+import Cookies from 'universal-cookie';
+const cookie = new Cookies();
 
 import LooperHead from './looper-head';
 import PlayList from './play-list';
@@ -46,6 +48,16 @@ class Looper extends Component {
             bpm: bpm
           };
         });
+        // load session playlist
+        let sessionPlaylist = cookie.get('playlist');
+        if (sessionPlaylist && sessionPlaylist.length) {
+	        this.store.playlist = this.store.tracklist
+            .filter(track => sessionPlaylist.find(t => track.id === t))
+        }
+	      // when playlist is changed - store it in cookie
+	      autorun(() => {
+		      cookie.set('playlist', this.store.playlist.map(track => track.id));
+	      })
       })
       .catch(err => {
         console.error(err, 'Failed to parse Track List.\nThis is a problem.');
@@ -54,13 +66,9 @@ class Looper extends Component {
 
   render() {
     return <div className="looper">
-      <LooperHead
-        store={this.store}
-      />
-      <PlayList
-        store={this.store}
-      />
-      </div>;
+      <LooperHead store={this.store} />
+      <PlayList store={this.store} />
+    </div>;
   }
 }
 

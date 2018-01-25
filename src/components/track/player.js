@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {observer} from 'mobx-react';
-import {Howl} from 'howler';
+import {Howler, Howl} from 'howler';
 
 @observer
 class Player extends Component{
@@ -51,6 +51,9 @@ class Player extends Component{
 	}
 
 	render() {
+		// let biquadFilter = Howler.ctx.createBiquadFilter({type: "lowpass";})
+		// console.log(biquadFilter)
+		// debugger
 		// set volume to pre-determined default value
 		this.player.volume(this.props.store.volume);
 		return <div className="web-audio-player"></div>;
